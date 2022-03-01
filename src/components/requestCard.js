@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-const request = ({site}) => {
+const RequestCard = ({site}) => {
 
     const [status, setStatus] = useState(null)
     const [req, setReq] = useState(0)
@@ -24,13 +24,13 @@ const request = ({site}) => {
         })
     }
 
-    setInterval(send, 5000)
+    setInterval(send, 1000)
     useEffect(() => {
         send()
     },[req])
 
     return (
-        <div className="flex space-a border">
+        <div className="flex space-a border margin">
             <div className="site">
                 <h5>{site}</h5>
             </div>
@@ -39,4 +39,4 @@ const request = ({site}) => {
         </div>
     );
 };
-export default request;
+export default RequestCard;
